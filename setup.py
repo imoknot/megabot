@@ -16,7 +16,7 @@ setuptools.setup(
     description="Python telegram API adapter for FastAPI and asyncio",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/imoknot/multibot",
+    url="https://github.com/imoknot/megabot",
     packages=setuptools.find_packages(),
     install_requires=requirements,
     classifiers=[
