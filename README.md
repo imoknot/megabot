@@ -2,10 +2,10 @@ A library for simultaneous operation of a large number of telegram bots
 with a single code base. 
 
 **Python - telegram API adapter**. 
-Based in Pydantic model libraries
+Based in [Pydantic](https://github.com/pydantic/pydantic) model libraries 
 
 You need to implement a web interface for a webhook 
-yourself. I recommend FastAPI.
+yourself. I recommend [FastAPI](https://github.com/tiangolo/fastapi).
 
 ___
 1. Fill in the dispatcher tokens in a convenient way for you in the format dict(int(bot_id), str(token)
@@ -16,7 +16,7 @@ ___
 
 
 
-The filtering of the callbacks was taken from [https://github.com/aiogram/aiogram/](), the syntax is identical
+The filtering of the callbacks was taken from [aiogram](https://github.com/aiogram/aiogram/), the syntax is identical
 
 example main.py
 
