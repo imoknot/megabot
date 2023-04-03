@@ -4,6 +4,15 @@ with a single code base.
 You need to implement a web interface for a webhook 
 yourself. I recommend FastAPI.
 
+___
+1. Fill in the dispatcher tokens in a convenient way for you in the format dict(int(bot_id), str(token)
+2. Define callback, message, and command handlers
+3. Connect the dispatcher to processing incoming webhooks.
+4. Done!
+___
+
+The filtering of the callbacks was taken from [https://github.com/aiogram/aiogram/](), the syntax is identical
+
 example main.py
 
 
@@ -61,3 +70,4 @@ for local testing: NOT FOR PROD!!!
     await def start_bot()
         asyncio.create_task(check_updates())
 
+add start_bot() to main file web_hooks 
