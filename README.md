@@ -43,14 +43,14 @@ example main.py
 
 webhook router file:
 
-        from main import dp
+    from main import dp
 
-        async def data_router(self, bot_id: int, data: dict) -> NoReturn:
-            token, user_uuid = await self.bot_service.get_token(bot_id)
-            if not(dp.tokens.get(bot_id, None)):
-                dp.tokens[bot_id] = token
-    
-            await dp.message_router(bot_id, data)
+    async def data_router(self, bot_id: int, data: dict) -> NoReturn:
+        token, user_uuid = await self.bot_service.get_token(bot_id)
+        if not(dp.tokens.get(bot_id, None)):
+            dp.tokens[bot_id] = token
+
+        await dp.message_router(bot_id, data)
 
 for local testing: NOT FOR PROD!!!
     add to main.py
