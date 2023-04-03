@@ -3,7 +3,7 @@ A library for simultaneous operation of a large number of telegram bots
 with a single code base. 
 
 **Python - telegram API adapter**. 
-Based in [Pydantic](https://github.com/pydantic/pydantic) model libraries 
+Based in [Pydantic](https://github.com/tiangolo/pydantic) model libraries 
 
 You need to implement a web interface for a webhook 
 yourself. I recommend [FastAPI](https://github.com/tiangolo/fastapi).
@@ -35,7 +35,7 @@ example main.py
     message_service = MessageService()
 
     async def hello_word(callback: CallbackQuery):
-        print(message_service.data)
+        print(callback.data)
         await message_service.callback_answer(self.dp.tokens[bot_id], callback.id)
         
     dp = Dispatcher()
@@ -59,7 +59,7 @@ webhook router file:
         await dp.message_router(bot_id, data)
 
 for local testing: NOT FOR PROD!!!
-    add to main.py
+add to main.py
     
     offset = 0
     
