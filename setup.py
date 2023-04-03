@@ -10,15 +10,15 @@ requirements = [
 
 setuptools.setup(
     name="megabot",
-    version="0.0.1",
+    version="0.0.3",
     author="Aleksandr Koksharov",
     author_email="koksharov@yandex.ru",
-    description="A Hello World package",
+    description="Python telegram API adapter for FastAPI and asyncio",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/ericjaychi/sample-pypi-package",
+    url="https://github.com/imoknot/multibot",
     packages=setuptools.find_packages(),
-    # install_requires=requirements,
+    install_requires=requirements,
     classifiers=[
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",

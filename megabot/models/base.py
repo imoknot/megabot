@@ -32,5 +32,3 @@ class Venue(ExcludeNone):
     foursquare_type: str | None = None
     google_place_id: str | None = None
     google_place_type: str | None = None
-
-

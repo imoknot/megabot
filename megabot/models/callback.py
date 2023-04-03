@@ -21,4 +21,3 @@ class AnswerCallbackQuery(ExcludeNone):
     show_alert: bool | None = None
     url: str | None = None
     cache_time: str | None = None
-
