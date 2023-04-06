@@ -52,7 +52,6 @@ webhook router file:
     from main import dp
 
     async def data_router(self, bot_id: int, data: dict) -> NoReturn:
-        token, user_uuid = await self.bot_service.get_token(bot_id)
         if not(dp.tokens.get(bot_id, None)):
             dp.tokens[bot_id] = token
 
@@ -60,7 +59,8 @@ webhook router file:
 
 for local testing: NOT FOR PROD!!!
 add to main.py
-    
+
+    from megabot.poster import get_updates
     offset = 0
     
     async def check_updates():
