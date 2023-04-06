@@ -30,7 +30,7 @@ setuptools.setup(
     ],
     project_urls=[
         "Bug Tracker=https://github.com/imoknot/megabot/issues",
-        "Changelog=https://github.com/imoknot/megabot/master/CHANGELOG.md",
+        "Changelog=https://github.com/imoknot/megabot/blob/master/CHANGELOG.md",
     ],
     python_requires='>=3.10',
 )
