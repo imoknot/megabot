@@ -3,6 +3,7 @@ import setuptools
 with open("README.md", "r") as f:
     long_description = f.read()
 
+
 requirements = [
     "requests",
     "pydantic"
@@ -19,8 +20,9 @@ setuptools.setup(
     url="https://github.com/imoknot/megabot",
     packages=setuptools.find_packages(),
     install_requires=requirements,
+    license="MIT",
     classifiers=[
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 3 - Pre-Alpha",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: 3.12",
@@ -28,9 +30,9 @@ setuptools.setup(
         "Operating System :: OS Independent",
         "Topic :: Software Development :: Libraries :: Python Modules"
     ],
-    project_urls=[
-        "Bug Tracker=https://github.com/imoknot/megabot/issues",
-        "Changelog=https://github.com/imoknot/megabot/blob/master/CHANGELOG.md",
-    ],
+    project_urls={
+        "Bug Tracker": "https://github.com/imoknot/megabot/issues",
+        "Changelog": "https://github.com/imoknot/megabot/blob/master/CHANGELOG.md",
+    },
     python_requires='>=3.10',
 )
