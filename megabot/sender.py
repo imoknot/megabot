@@ -6,6 +6,8 @@ from .models import (
     SendMessage,
     ReplyKeyboardMarkup,
     ReplyKeyboardRemove,
+    SendPhoto,
+    InputFile
 )
 
 
@@ -66,6 +68,45 @@ class MessageService(Base):
         request_url = self.request_url(token, 'sendMessage')
         response = requests.post(url=request_url, json=message)
         return response
+
+    async def send_photo(
+            self,
+            token: str,
+            chat_id: int,
+            photo: str | InputFile,
+            message_thread_id: int | None = None,
+            caption: str | None = None,
+            parse_mode: str | None = None,
+            caption_entities: list | None = None,
+            has_spoiler: bool | None = None,
+            disable_notification: bool | None = None,
+            protect_content: bool | None = None,
+            reply_to_message_id: int | None = None,
+            allow_sending_without_reply: bool | None = None,
+            reply_markup: InlineKeyboardMarkup | ReplyKeyboardMarkup | ReplyKeyboardRemove | ForceReply | None = None
+    ):
+        message = SendPhoto(
+            chat_id=chat_id,
+            message_thread_id=message_thread_id,
+            caption=caption,
+            parse_mode=parse_mode,
+            caption_entities=caption_entities,
+            has_spoiler=has_spoiler,
+            disable_notification=disable_notification,
+            protect_content=protect_content,
+            reply_to_message_id=reply_to_message_id,
+            allow_sending_without_reply=allow_sending_without_reply
+        ).dict()
+        if reply_markup:
+            message['reply_markup'] = reply_markup.json()
+
+        request_url = self.request_url(token, 'sendPhoto')
+        if isinstance(photo, str):
+            message['photo'] = photo
+            response = requests.post(url=request_url, data=message)
+        else:
+            response = requests.post(url=request_url, data=message, files={"photo": photo})
+        return response.json()
 
 
 async def get_updates(token: str, offset=0):

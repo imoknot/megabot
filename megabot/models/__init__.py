@@ -10,7 +10,9 @@ from .keyboards import (
     InlineKeyboardButton,
     ForceReply,
 )
+from .photo import SendPhoto
 from .message import Message, SendMessage
 from .users import User
+from .file import InputFile
 
 

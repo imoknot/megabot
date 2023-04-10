@@ -7,6 +7,12 @@ class ExcludeNone(BaseModel):
             del kwargs['exclude_none']
         return super().dict(*args, exclude_none=True, **kwargs)
 
+    def json(self, *args, **kwargs):
+        if kwargs.get('exclude_none'):
+            del kwargs['exclude_none']
+        return super().json(*args, exclude_none=True, **kwargs)
+
+
 
 class Location(ExcludeNone):
     longitude: float

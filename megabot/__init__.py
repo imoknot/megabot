@@ -1,2 +1,2 @@
 from .dispatcher import Dispatcher
-from .poster import SendMessage
+from .sender import SendMessage
