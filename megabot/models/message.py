@@ -1,38 +1,21 @@
 from typing import ForwardRef
+
 from pydantic import Field
 
 from .base import ExcludeNone, Location, Venue
 from .chats import Chat, ChatShared
-from .game import Game
 from .emodj import Dice
-from .forum import (
-    ForumTopicCreated,
-    ForumTopicEdited,
-    ForumTopicClosed,
-    ForumTopicReopened,
-    GeneralForumTopicHidden,
-    GeneralForumTopicUnhidden
-)
+from .forum import (ForumTopicClosed, ForumTopicCreated, ForumTopicEdited, ForumTopicReopened, GeneralForumTopicHidden,
+                    GeneralForumTopicUnhidden)
+from .game import Game
+from .keyboards import ForceReply, InlineKeyboardMarkup, ReplyKeyboardMarkup, ReplyKeyboardRemove
+from .media import Animation, Audio, Document, PhotoSize, Video, VideoNote, Voice
 from .payment import Invoice, SuccessfulPayment
 from .poll import Poll
-from .media import Animation, Audio, Document, PhotoSize, Video, VideoNote, Voice
 from .sticker import Sticker
-from .users import User, Contact, UserShared, PassportData, ProximityAlertTriggered
-from .video import (
-    VideoChatScheduled,
-    WriteAccessAllowed,
-    VideoChatStarted,
-    VideoChatEnded,
-    VideoChatParticipantsInvited
-)
-
-from .keyboards import (
-    ForceReply,
-    InlineKeyboardMarkup,
-    ReplyKeyboardMarkup,
-    ReplyKeyboardRemove,
-)
-
+from .users import Contact, PassportData, ProximityAlertTriggered, User, UserShared
+from .video import (VideoChatEnded, VideoChatParticipantsInvited, VideoChatScheduled, VideoChatStarted,
+                    WriteAccessAllowed)
 from .web_app import WebAppData
 
 Message = ForwardRef('Message')

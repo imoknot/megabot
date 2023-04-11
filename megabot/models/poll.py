@@ -1,4 +1,5 @@
 from typing import ForwardRef
+
 from .base import ExcludeNone
 
 MessageEntity = ForwardRef('MessageEntity')

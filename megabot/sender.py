@@ -1,14 +1,7 @@
 import requests
-from .models import (
-    AnswerCallbackQuery,
-    ForceReply,
-    InlineKeyboardMarkup,
-    SendMessage,
-    ReplyKeyboardMarkup,
-    ReplyKeyboardRemove,
-    SendPhoto,
-    InputFile
-)
+
+from .models import (AnswerCallbackQuery, ForceReply, InlineKeyboardMarkup, InputFile, ReplyKeyboardMarkup,
+                     ReplyKeyboardRemove, SendMessage, SendPhoto)
 
 
 class Base:
@@ -18,39 +11,35 @@ class Base:
 
 class MessageService(Base):
     async def callback_answer(
-            self,
-            token: str,
-            callback_query_id: str,
-            text: str | None = None,
-            show_alert: bool | None = None,
-            url: str | None = None,
-            cache_time: str | None = None,
+        self,
+        token: str,
+        callback_query_id: str,
+        text: str | None = None,
+        show_alert: bool | None = None,
+        url: str | None = None,
+        cache_time: str | None = None,
     ):
         message = AnswerCallbackQuery(
-            callback_query_id=callback_query_id,
-            text=text,
-            show_alert=show_alert,
-            url=url,
-            cache_time=cache_time
+            callback_query_id=callback_query_id, text=text, show_alert=show_alert, url=url, cache_time=cache_time
         ).dict()
         request_url = self.request_url(token, 'answerCallbackQuery')
         response = requests.post(url=request_url, json=message)
         return response
 
     async def send_message(
-            self,
-            token: str,
-            chat_id: int,
-            message_thread_id: int | None = None,
-            text: str | None = None,
-            parse_mode: str | None = None,
-            entities: list | None = None,
-            disable_web_page_preview: bool | None = None,
-            disable_notification: bool | None = None,
-            protect_content: bool | None = None,
-            reply_to_message_id: int | None = None,
-            allow_sending_without_reply: bool | None = None,
-            reply_markup: InlineKeyboardMarkup | ReplyKeyboardMarkup | ReplyKeyboardRemove | ForceReply | None = None
+        self,
+        token: str,
+        chat_id: int,
+        message_thread_id: int | None = None,
+        text: str | None = None,
+        parse_mode: str | None = None,
+        entities: list | None = None,
+        disable_web_page_preview: bool | None = None,
+        disable_notification: bool | None = None,
+        protect_content: bool | None = None,
+        reply_to_message_id: int | None = None,
+        allow_sending_without_reply: bool | None = None,
+        reply_markup: InlineKeyboardMarkup | ReplyKeyboardMarkup | ReplyKeyboardRemove | ForceReply | None = None,
     ):
         message = SendMessage(
             chat_id=chat_id,
@@ -63,27 +52,27 @@ class MessageService(Base):
             protect_content=protect_content,
             reply_to_message_id=reply_to_message_id,
             allow_sending_without_reply=allow_sending_without_reply,
-            reply_markup=reply_markup
+            reply_markup=reply_markup,
         ).dict()
         request_url = self.request_url(token, 'sendMessage')
         response = requests.post(url=request_url, json=message)
         return response
 
     async def send_photo(
-            self,
-            token: str,
-            chat_id: int,
-            photo: str | InputFile,
-            message_thread_id: int | None = None,
-            caption: str | None = None,
-            parse_mode: str | None = None,
-            caption_entities: list | None = None,
-            has_spoiler: bool | None = None,
-            disable_notification: bool | None = None,
-            protect_content: bool | None = None,
-            reply_to_message_id: int | None = None,
-            allow_sending_without_reply: bool | None = None,
-            reply_markup: InlineKeyboardMarkup | ReplyKeyboardMarkup | ReplyKeyboardRemove | ForceReply | None = None
+        self,
+        token: str,
+        chat_id: int,
+        photo: str | InputFile,
+        message_thread_id: int | None = None,
+        caption: str | None = None,
+        parse_mode: str | None = None,
+        caption_entities: list | None = None,
+        has_spoiler: bool | None = None,
+        disable_notification: bool | None = None,
+        protect_content: bool | None = None,
+        reply_to_message_id: int | None = None,
+        allow_sending_without_reply: bool | None = None,
+        reply_markup: InlineKeyboardMarkup | ReplyKeyboardMarkup | ReplyKeyboardRemove | ForceReply | None = None,
     ):
         message = SendPhoto(
             chat_id=chat_id,
@@ -95,7 +84,7 @@ class MessageService(Base):
             disable_notification=disable_notification,
             protect_content=protect_content,
             reply_to_message_id=reply_to_message_id,
-            allow_sending_without_reply=allow_sending_without_reply
+            allow_sending_without_reply=allow_sending_without_reply,
         ).dict()
         if reply_markup:
             message['reply_markup'] = reply_markup.json()
@@ -105,7 +94,7 @@ class MessageService(Base):
             message['photo'] = photo
             response = requests.post(url=request_url, data=message)
         else:
-            response = requests.post(url=request_url, data=message, files={"photo": photo})
+            response = requests.post(url=request_url, data=message, files={'photo': photo})
         return response.json()
 
 

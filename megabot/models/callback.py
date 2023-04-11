@@ -1,8 +1,8 @@
 from pydantic import Field
 
 from .base import ExcludeNone
-from .users import User
 from .message import Message
+from .users import User
 
 
 class CallbackQuery(ExcludeNone):

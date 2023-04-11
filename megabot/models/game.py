@@ -1,6 +1,7 @@
 from typing import ForwardRef
+
 from .base import ExcludeNone
-from .media import PhotoSize, Animation
+from .media import Animation, PhotoSize
 
 MessageEntity = ForwardRef('MessageEntity')
 

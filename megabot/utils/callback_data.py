@@ -28,6 +28,6 @@ class CallbackData:
         for key in self._part_names:
             current_filter += str(config.get(key, '')) + self.separator
             filter_hash[key] = str(config.get(key, ''))
-        current_filter = self.separator + current_filter[:len(current_filter) - 1]
+        current_filter = self.separator + current_filter[: len(current_filter) - 1]
 
         return {self.class_prefix: {current_filter: filter_hash}}

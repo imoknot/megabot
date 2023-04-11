@@ -1,7 +1,9 @@
-from typing import ForwardRef, Any
+from typing import Any, ForwardRef
+
 from pydantic import FilePath
+
 from .base import ExcludeNone
-from .media import PhotoSize, Animation
+from .media import Animation, PhotoSize
 
 
 class InputFile(FilePath):

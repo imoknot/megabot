@@ -1,5 +1,6 @@
-from typing import NoReturn
 from dataclasses import dataclass
+from typing import NoReturn
+
 from .models import CallbackQuery, Message
 
 
@@ -100,5 +101,3 @@ class Dispatcher:
                             message = Message(**message)
                             await current_handler.handler(bot_id, message, msg[1] if len(msg) == 2 else None)
                         continue
-
-

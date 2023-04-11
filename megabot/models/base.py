@@ -13,7 +13,6 @@ class ExcludeNone(BaseModel):
         return super().json(*args, exclude_none=True, **kwargs)
 
 
-
 class Location(ExcludeNone):
     longitude: float
     latitude: float
