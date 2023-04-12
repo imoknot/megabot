@@ -125,3 +125,8 @@ class Message(ExcludeNone):
 
 Message.update_forward_refs()
 MessageEntity.update_forward_refs()
+
+
+class DeleteMessage(ExcludeNone):
+    chat_id: int | str
+    message_id: int

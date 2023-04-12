@@ -99,5 +99,8 @@ class Dispatcher:
                         current_handler = cls.handlers_command.get(msg[0], None)
                         if current_handler:
                             message = Message(**message)
-                            await current_handler.handler(bot_id, message, msg[1] if len(msg) == 2 else None)
+                            if len(msg) == 2:
+                                await current_handler.handler(bot_id, message, msg[1])
+                            else:
+                                await current_handler.handler(bot_id, message)
                         continue

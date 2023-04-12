@@ -1,14 +1,12 @@
 import requests
 
-from .models import BotCommand
+from .models import BotCommand, SetMyCommands
 from .sender import Base
 
 
-class CommandsService(Base):
+class Commands(Base):
     async def set_my_commands(self, token: str, commands: list[BotCommand]):
-        message = AnswerCallbackQuery(
-            callback_query_id=callback_query_id, text=text, show_alert=show_alert, url=url, cache_time=cache_time
-        ).dict()
-        request_url = self.request_url(token, 'answerCallbackQuery')
-        response = requests.post(url=request_url, json=message)
+        set_command = SetMyCommands(commands=commands).dict()
+        request_url = self.request_url(token, 'setMyCommands')
+        response = requests.post(url=request_url, json=set_command)
         return response

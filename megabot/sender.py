@@ -1,7 +1,7 @@
 import requests
 
-from .models import (AnswerCallbackQuery, ForceReply, InlineKeyboardMarkup, InputFile, ReplyKeyboardMarkup,
-                     ReplyKeyboardRemove, SendMessage, SendPhoto)
+from .models import (AnswerCallbackQuery, DeleteMessage, ForceReply, InlineKeyboardMarkup, InputFile,
+                     ReplyKeyboardMarkup, ReplyKeyboardRemove, SendMessage, SendPhoto)
 
 
 class Base:
@@ -10,6 +10,12 @@ class Base:
 
 
 class MessageService(Base):
+    async def delete_message(self, token: str, chat_id: int | str, message_id: int):
+        message = DeleteMessage(chat_id=chat_id, message_id=message_id).dict()
+        request_url = self.request_url(token, 'deleteMessage')
+        response = requests.post(url=request_url, json=message)
+        return response
+
     async def callback_answer(
         self,
         token: str,
