@@ -5,8 +5,14 @@ from pydantic import Field
 from .base import ExcludeNone, Location, Venue
 from .chats import Chat, ChatShared
 from .emodj import Dice
-from .forum import (ForumTopicClosed, ForumTopicCreated, ForumTopicEdited, ForumTopicReopened, GeneralForumTopicHidden,
-                    GeneralForumTopicUnhidden)
+from .forum import (
+    ForumTopicClosed,
+    ForumTopicCreated,
+    ForumTopicEdited,
+    ForumTopicReopened,
+    GeneralForumTopicHidden,
+    GeneralForumTopicUnhidden,
+)
 from .game import Game
 from .keyboards import ForceReply, InlineKeyboardMarkup, ReplyKeyboardMarkup, ReplyKeyboardRemove
 from .media import Animation, Audio, Document, PhotoSize, Video, VideoNote, Voice
@@ -14,8 +20,13 @@ from .payment import Invoice, SuccessfulPayment
 from .poll import Poll
 from .sticker import Sticker
 from .users import Contact, PassportData, ProximityAlertTriggered, User, UserShared
-from .video import (VideoChatEnded, VideoChatParticipantsInvited, VideoChatScheduled, VideoChatStarted,
-                    WriteAccessAllowed)
+from .video import (
+    VideoChatEnded,
+    VideoChatParticipantsInvited,
+    VideoChatScheduled,
+    VideoChatStarted,
+    WriteAccessAllowed,
+)
 from .web_app import WebAppData
 
 Message = ForwardRef('Message')
@@ -130,3 +141,10 @@ MessageEntity.update_forward_refs()
 class DeleteMessage(ExcludeNone):
     chat_id: int | str
     message_id: int
+
+
+class EditMessageReplyMarkup(ExcludeNone):
+    chat_id: int | str | None = None
+    message_id: int | None = None
+    inline_message_id: str | None = None
+    reply_markup: InlineKeyboardMarkup | None = None
