@@ -10,7 +10,7 @@ from .keyboards import (
     InlineKeyboardMarkup,
     KeyboardButton,
     ReplyKeyboardMarkup,
-    ReplyKeyboardRemove,
+    ReplyKeyboardRemove
 )
 from .message import DeleteMessage, EditMessageReplyMarkup, Message, SendMessage
 from .photo import SendPhoto

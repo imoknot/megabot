@@ -11,7 +11,7 @@ from .forum import (
     ForumTopicEdited,
     ForumTopicReopened,
     GeneralForumTopicHidden,
-    GeneralForumTopicUnhidden,
+    GeneralForumTopicUnhidden
 )
 from .game import Game
 from .keyboards import ForceReply, InlineKeyboardMarkup, ReplyKeyboardMarkup, ReplyKeyboardRemove
@@ -25,7 +25,7 @@ from .video import (
     VideoChatParticipantsInvited,
     VideoChatScheduled,
     VideoChatStarted,
-    WriteAccessAllowed,
+    WriteAccessAllowed
 )
 from .web_app import WebAppData
 
