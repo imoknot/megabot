@@ -10,7 +10,7 @@ from .models import (
     ReplyKeyboardMarkup,
     ReplyKeyboardRemove,
     SendMessage,
-    SendPhoto
+    SendPhoto,
 )
 
 
