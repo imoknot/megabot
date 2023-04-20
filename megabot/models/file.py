@@ -6,6 +6,7 @@ from .base import ExcludeNone
 from .media import Animation, PhotoSize
 
 
+
 class InputFile(FilePath):
     pass
     # title: str

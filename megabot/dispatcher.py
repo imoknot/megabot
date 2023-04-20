@@ -104,3 +104,4 @@ class Dispatcher:
                             else:
                                 await current_handler.handler(bot_id, message)
                         continue
+

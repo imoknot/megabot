@@ -137,3 +137,4 @@ async def get_updates(token: str, offset=0):
         result = response.json()
         return result, None
     return None, response
+

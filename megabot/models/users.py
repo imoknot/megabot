@@ -15,6 +15,7 @@ class User(ExcludeNone):
     supports_inline_queries: bool | None = None
 
 
+
 class Contact(ExcludeNone):
     phone_number: str
     first_name: str

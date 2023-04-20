@@ -7,6 +7,7 @@ class ForumTopicCreated(ExcludeNone):
     icon_custom_emoji_id: str | None = None
 
 
+
 class ForumTopicEdited(ExcludeNone):
     name: str | None = None
     icon_custom_emoji_id: str | None = None
