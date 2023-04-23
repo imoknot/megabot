@@ -8,7 +8,7 @@ requirements = ['requests', 'pydantic']
 
 setuptools.setup(
     name='megabot',
-    version='0.0.4',
+    version='0.0.5',
     author='Aleksandr Koksharov',
     author_email='koksharov@yandex.ru',
     description='Python telegram API adapter for FastAPI and asyncio',
