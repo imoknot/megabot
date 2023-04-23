@@ -19,7 +19,7 @@ setuptools.setup(
     install_requires=requirements,
     license='MIT',
     classifiers=[
-        'Development Status :: 3 - Pre-Alpha',
+        'Development Status :: 2 - Pre-Alpha',
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
         'Programming Language :: Python :: 3.12',

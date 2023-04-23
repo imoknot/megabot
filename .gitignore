@@ -45,3 +45,4 @@ alembic.ini
 temp/config.py
 *.csv
 *.env
+*.deploy

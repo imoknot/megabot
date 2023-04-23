@@ -1,2 +1,5 @@
-from .dispatcher import Dispatcher
-from .sender import SendMessage, get_updates
+from .dispatcher import *
+from .sender import *
+from .utils import *
+from .command import *
+from .models import *
