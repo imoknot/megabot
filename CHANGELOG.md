@@ -8,7 +8,8 @@ IMPROVEMENTS:
 
 BUG FIXES:
 ## [0.0.5] - 2023-04-23 
-_added _
+### Added
+- add delete messages
 
 ## [0.0.3] - 2023-04-03 
 _First test release._
