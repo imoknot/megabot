@@ -7,6 +7,8 @@ FEATURES: example
 IMPROVEMENTS:
 
 BUG FIXES:
+## [0.0.5] - 2023-04-23 
+_added _
 
 ## [0.0.3] - 2023-04-03 
 _First test release._

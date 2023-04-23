@@ -10,4 +10,3 @@ class Commands(Base):
         request_url = self.request_url(token, 'setMyCommands')
         response = requests.post(url=request_url, json=set_command)
         return response
-

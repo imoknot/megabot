@@ -2,7 +2,6 @@ from typing import ForwardRef
 
 from pydantic import Field
 
-
 from .base import ExcludeNone, Location, Venue
 from .chats import Chat, ChatShared
 from .emodj import Dice

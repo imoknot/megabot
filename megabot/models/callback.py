@@ -1,6 +1,5 @@
 from pydantic import Field
 
-
 from .base import ExcludeNone
 from .message import Message
 from .users import User

@@ -2,7 +2,6 @@ from typing import Any, ForwardRef
 
 from pydantic import FilePath
 
-
 from .base import ExcludeNone
 from .file import InputFile
 from .keyboards import ForceReply, InlineKeyboardMarkup, ReplyKeyboardMarkup, ReplyKeyboardRemove

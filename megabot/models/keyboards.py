@@ -6,7 +6,6 @@ from .base import ExcludeNone
 from .chats import ChatAdministratorRights
 
 
-
 class WebAppInfo(ExcludeNone):
     pass
 

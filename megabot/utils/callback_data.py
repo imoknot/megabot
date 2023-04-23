@@ -31,4 +31,3 @@ class CallbackData:
         current_filter = self.separator + current_filter[: len(current_filter) - 1]
 
         return {self.class_prefix: {current_filter: filter_hash}}
-

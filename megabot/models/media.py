@@ -9,7 +9,6 @@ class PhotoSize(ExcludeNone):
     file_size: int | None = None
 
 
-
 class Audio(ExcludeNone):
     file_id: str
     file_unique_id: str

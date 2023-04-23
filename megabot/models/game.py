@@ -6,7 +6,6 @@ from .media import Animation, PhotoSize
 MessageEntity = ForwardRef('MessageEntity')
 
 
-
 class Game(ExcludeNone):
     title: str
     description: str

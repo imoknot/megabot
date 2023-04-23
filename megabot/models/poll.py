@@ -5,7 +5,6 @@ from .base import ExcludeNone
 MessageEntity = ForwardRef('MessageEntity')
 
 
-
 class PollOption(ExcludeNone):
     text: str
     voter_count: int

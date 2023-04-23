@@ -2,7 +2,6 @@ from .base import ExcludeNone, File
 from .media import PhotoSize
 
 
-
 class MaskPosition(ExcludeNone):
     point: str
     x_shift: float

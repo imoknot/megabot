@@ -9,7 +9,6 @@ class Invoice(ExcludeNone):
     total_amount: str
 
 
-
 class ShippingAddress(ExcludeNone):
     country_code: str
     state: str
